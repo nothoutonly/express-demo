@@ -1,0 +1,10 @@
+<% include _header %>
+<h1>Edit your profile</h1>
+<form action="/edit" method="post">
+<label>Nickname:</label>
+<input name="nickname" type="text" class="form-control" placeholder="nickname" value="<%= currentUser.nickname || "" %>">
+<label>Biograph:</label>
+<textarea name="bio" class="form-control" placeholder="Tell us about yourself!"> <%= currentUser.bio || "" %></textarea>
+<input type="submit" value="Update" class="btn btn-primary btn-block">
+</form>
+<% include _footer %>

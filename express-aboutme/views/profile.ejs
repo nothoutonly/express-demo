@@ -1,0 +1,17 @@
+<% include _header %>
+<!-- 
+    参考变量currentUser来判断你的登陆状态。不过现在它总会是false状态
+ -->
+
+ <div class="panel panel-default">
+    <div class="panel-heading">
+        <% if ((currentUser) && (currentUser.id === user.id)) { %>
+            <a href="/edit" class="pull-right">Edit your profile</a>
+        <% } %>
+        <h1><%= user.name() %> </h1><i>Joined on <%= user.normalizeDate(user._id) %></i>
+    </div>
+    <% if (user.bio) { %>
+        <div class="panel-body"><%= user.bio %></div>
+    <% } %>
+</div>
+<% include _footer %>
